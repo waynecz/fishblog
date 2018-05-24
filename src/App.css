@@ -1,100 +1,114 @@
+#root {
+  height: 100vh;
+  overflow: hidden;
+}
+
 .App {
-    text-align: center;
+  text-align: center;
 }
 
 .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-    height: 80px;
+  animation: App-logo-spin infinite 20s linear;
+  height: 80px;
 }
 
 .App-header {
-    background-color: #222;
-    height: 150px;
-    padding: 20px;
-    color: white;
+  background-color: #222;
+  height: 150px;
+  padding: 20px;
+  color: white;
 }
 
 .App-title {
-    font-size: 1.5em;
+  font-size: 1.5em;
 }
 
 .App-intro {
-    font-size: large;
+  font-size: large;
 }
 
-.App-body{
-    height: 100vh
+.App-body {
+  height: 100vh;
 }
 
 .titles {
-    top: 50px;
-    color: aliceblue;
+  top: 50px;
+  color: aliceblue;
 }
 
 .titles a {
-    color: aliceblue;
+  color: aliceblue;
 }
 
 .article {
-    display: flex;
-    height: 100vh;
-    /*测试,限制高度,强制展示滚动条*/
-    /*height: 300px;*/
+  display: flex;
+  height: 100%;
+  /*测试,限制高度,强制展示滚动条*/
+  /*height: 300px;*/
+}
+
+.article-container {
+  height: calc(100vh - 150px);
 }
 
 .editor {
-    /*height: 100%;*/
+  /*height: 100%;*/
+}
+
+.editor .CodeMirror-sizer {
+  padding: 30px !important;
 }
 
 .editor .CodeMirror {
-    font-size: 14px;
-    height: 100%;
-    padding: 30px 30px;
-    box-sizing: content-box;
+  font-size: 14px;
+  height: 100%;
+  box-sizing: content-box;
 }
 
 .editor-pane {
-    overflow: auto;
-    flex: 1;
+  overflow: auto;
+  flex: 1;
 }
 
 .result-pane {
-    overflow: auto;
-    flex: 1;
+  overflow: auto;
+  flex: 1;
+  padding-bottom: 40px;
 }
 
 .result-pane > div {
-    top: 200px;
-    color: #444;
-    overflow: auto;
-    font-family: 'Microsoft YaHei', "Open Sans", "Clear Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
-    font-size: 16px;
-    line-height: 1.5em;
-    padding: 10px 20px;
+  top: 200px;
+  color: #444;
+  overflow: auto;
+  font-family: 'Microsoft YaHei', 'Open Sans', 'Clear Sans', 'Helvetica Neue', Helvetica, Arial,
+    sans-serif;
+  font-size: 16px;
+  line-height: 1.5em;
+  padding: 10px 20px;
 }
 
 pre {
-    border: 1px solid #ccc;
+  border: 1px solid #ccc;
 }
 
 blockquote {
-    color: #666;
-    margin: 0;
-    padding-left: 3em;
-    border-left: 0.5em #eee solid;
+  color: #666;
+  margin: 0;
+  padding-left: 3em;
+  border-left: 0.5em #eee solid;
 }
 
 tr {
-    border-top: 1px solid #c6cbd1;
-    background: #fff;
+  border-top: 1px solid #c6cbd1;
+  background: #fff;
 }
 
 th,
 td {
-    padding: 6px 13px;
-    border: 1px solid #dfe2e5;
+  padding: 6px 13px;
+  border: 1px solid #dfe2e5;
 }
 
 table tr:nth-child(2n) {
-    background: #f6f8fa;
+  background: #f6f8fa;
 }

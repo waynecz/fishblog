@@ -4,6 +4,7 @@
   "private": true,
   "main": "src/electron-starter.js",
   "dependencies": {
+    "codemirror": "^5.38.0",
     "highlightjs": "^9.10.0",
     "prop-types": "^15.6.1",
     "purecss": "^1.0.0",
@@ -17,6 +18,7 @@
     "react-scroll-sync": "^0.5.0"
   },
   "scripts": {
+    "dev": "npm start & npm run electron-dev",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
