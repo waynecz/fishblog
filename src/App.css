@@ -8,7 +8,6 @@
 }
 
 .App-header {
-    position: relative;
     background-color: #222;
     height: 150px;
     padding: 20px;
@@ -23,8 +22,11 @@
     font-size: large;
 }
 
+.App-body{
+    height: 100vh
+}
+
 .titles {
-    position: fixed;
     top: 50px;
     color: aliceblue;
 }
@@ -35,8 +37,9 @@
 
 .article {
     display: flex;
+    height: 100vh;
     /*测试,限制高度,强制展示滚动条*/
-    height: 500px
+    /*height: 300px;*/
 }
 
 .editor {
@@ -46,6 +49,8 @@
 .editor .CodeMirror {
     font-size: 14px;
     height: 100%;
+    padding: 30px 30px;
+    box-sizing: content-box;
 }
 
 .editor-pane {
@@ -65,7 +70,7 @@
     font-family: 'Microsoft YaHei', "Open Sans", "Clear Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-size: 16px;
     line-height: 1.5em;
-    padding: 10px 10px 10px 20px;
+    padding: 10px 20px;
 }
 
 pre {

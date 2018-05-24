@@ -5,13 +5,12 @@ import Markdown from 'react-markdown';
 import { UnControlled as CodeMirror } from 'react-codemirror2';
 import { ScrollSync, ScrollSyncPane } from 'react-scroll-sync';
 import CodeBlock from './code-block';
+import 'codemirror/lib/codemirror.css';
+import 'codemirror/mode/markdown/markdown';
+import 'codemirror/theme/mbo.css';
+import 'purecss/build/pure-min.css';
 
-require('codemirror/lib/codemirror.css');
-require('codemirror/mode/markdown/markdown');
-require('codemirror/theme/mbo.css');
-require('purecss/build/pure-min.css');
-
-require('./App.css');
+import './App.css';
 
 class Article extends Component {
 
@@ -42,14 +41,21 @@ class Article extends Component {
     return (
       <ScrollSync>
         <div>
-          <button onClick={this.saveArticle}>保存</button>
+          {/*<button onClick={this.saveArticle}>保存</button>*/}
           <div className="article">
             <ScrollSyncPane>
               <div className="editor-pane">
-                <CodeMirror options={{
-                  mode: 'markdown',
-                  theme: 'mbo',
-                }} value={content} autoCursor={false} onChange={this.handleMarkdownChange} className="editor"/>
+                <CodeMirror
+                  options={{
+                    mode: 'markdown',
+                    theme: 'mbo',
+                    lineWrapping: true,
+                  }}
+                  value={content}
+                  autoCursor={false}
+                  onChange={this.handleMarkdownChange}
+                  className="editor"
+                />
               </div>
             </ScrollSyncPane>
 
@@ -65,8 +71,7 @@ class Article extends Component {
         </div>
       </ScrollSync>
 
-    )
-      ;
+    );
   }
 }
 
@@ -84,10 +89,10 @@ class App extends Component {
         <Router>
           <div>
             <header className="App-header">
+              <ul className="titles">
+                {this.state.posts.map(p => <li><Link to={`/article/${p}`}>{p}</Link></li>)}
+              </ul>
             </header>
-            <ul className="titles">
-              {this.state.posts.map(p => <li><Link to={`/article/${p}`}>{p}</Link></li>)}
-            </ul>
             <Route path={`/article/:title`} component={Article}/>
           </div>
         </Router>
